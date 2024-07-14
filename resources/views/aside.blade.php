@@ -75,21 +75,21 @@
             <li class="menu-item">
               <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-layout"></i>
-                <div data-i18n="Layouts">Fssai</div>
+                <div data-i18n="Layouts">License Categories </div>
               </a>
 
               <ul class="menu-sub">
                 <li class="menu-item">
-                  <a href={{ route('fssai.list') }} class="menu-link">
+                  <a href={{ route('license_categories.index') }} class="menu-link">
                     <div data-i18n="Without menu">License List</div>
                   </a>
                 </li>
-                <li class="menu-item">
+                {{-- <li class="menu-item">
                   <a href={{ route('fssai.create') }} class="menu-link">
                     <div data-i18n="Without navbar">Add Fssai License</div>
                   </a>
-                </li>
-                <li class="menu-item">
+                </li> --}}
+                {{-- <li class="menu-item">
                   <a href={{ route('latTwoMonthData') }} class="menu-link">
                     <div data-i18n="Container">Renewal List</div>
                   </a>
@@ -103,7 +103,7 @@
                   <a href="layouts-blank.html" class="menu-link">
                     <div data-i18n="Blank">Blank</div>
                   </a>
-                </li>
+                </li> --}}
               </ul>
             </li>
             <!-- Pages -->
@@ -111,22 +111,25 @@
             <li class="menu-item">
               <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-dock-top"></i>
-                <div data-i18n="Account Settings">Account Settings</div>
+                <div data-i18n="Account Settings">License Type</div>
               </a>
               <ul class="menu-sub">
                 <li class="menu-item">
-                  <a href="{{ route('profile',auth()->user()->id) }}" class="menu-link">
-                    <div data-i18n="Account">Account</div>
+                  <a href="{{ route('license_types.index') }}" class="menu-link">
+                    <div data-i18n="Account">Type List</div>
                   </a>
                 </li>
+              </ul>
+            </li>
+            <li class="menu-item">
+              <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-dock-top"></i>
+                <div data-i18n="Account Settings">Fssai License Data</div>
+              </a>
+              <ul class="menu-sub">
                 <li class="menu-item">
-                  <a href="{{ route('notifications') }}" class="menu-link">
-                    <div data-i18n="Notifications">Notifications</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="pages-account-settings-connections.html" class="menu-link">
-                    <div data-i18n="Connections">Connections</div>
+                  <a href="{{ route('licenses.index') }}" class="menu-link">
+                    <div data-i18n="Account">Fssai Data List</div>
                   </a>
                 </li>
               </ul>

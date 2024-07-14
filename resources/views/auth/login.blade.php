@@ -143,6 +143,15 @@
                     <span class="app-brand-text demo text-body fw-bold">Fssai</span>
                   </a>
                 </div>
+                <div class="text-center p-2">
+                    <a href="{{ url('/auth/facebook') }}" class="btn btn-primary">Login with Facebook</a>
+                </div>
+                <div class="text-center p-2">
+                    <a href="{{ url('/google') }}" class="btn btn-danger">Login with Google</a>
+                </div>
+                <div class="text-center p-2">
+                    <a href="{{ url('/auth/linkedin') }}" class="btn btn-info">Login with LinkedIn</a>
+                </div>
                 <!-- /Logo -->
                 <p class="mb-4">Please sign-in to your account</p>
   

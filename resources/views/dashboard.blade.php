@@ -15,17 +15,17 @@
 
               <a href="javascript:;" class="btn btn-sm btn-outline-primary">View Badges</a>
             </div> --}}
-            @if($percentage != 0)
+            {{-- @if($percentage != 0) --}}
               <div class="card-body">
-                <h5 class="card-title text-primary">Congratulations @if(isset(auth()->user()->name)) {{ auth()->user()->name }} @endif ! 🎉</h5>
+                {{-- <h5 class="card-title text-primary">Congratulations @if(isset(auth()->user()->name)) {{ auth()->user()->name }} @endif ! 🎉</h5> --}}
                 <p class="mb-4">
-                  You have done <span class="fw-medium">{{number_format($percentage, 2)}} % </span> more sales today.
+                  {{-- You have done <span class="fw-medium">{{number_format($percentage, 2)}} % </span> more sales today. --}}
                 </p>
 
                           <a href="javascript:;" class="btn btn-sm btn-outline-primary">View Badges</a>
               </div>
                   
-              @else
+              {{-- @else --}}
               <div class="card-body">
                 <h5 class="card-title text-primary"><i class="bx bx-sad"></i>
                 </h5>
@@ -35,7 +35,7 @@
 
                 <a href="javascript:;" class="btn btn-sm btn-outline-primary">View Badges</a>
               </div>
-              @endif
+              {{-- @endif --}}
           </div>
           <div class="col-sm-5 text-center text-sm-left">
             <div class="card-body pb-0 px-0 px-md-4">
@@ -82,8 +82,8 @@
                 </div>
               </div>
               <span class="fw-medium d-block mb-1">Year Profit</span>
-              <h5 class="card-title mb-2">Rs. {{number_format($totalprofits)}}</h5>
-              <small class="text-success fw-medium"><i class="bx bx-up-arrow-alt"></i> {{number_format($profitPercentage, 2) }}%</small>
+              {{-- <h5 class="card-title mb-2">Rs. {{number_format($totalprofits)}}</h5> --}}
+              {{-- <small class="text-success fw-medium"><i class="bx bx-up-arrow-alt"></i> {{number_format($profitPercentage, 2) }}%</small> --}}
             </div>
           </div>
         </div>
@@ -116,8 +116,8 @@
                 </div>
               </div>
               <span>Sales</span>
-              <h5 class="card-title text-nowrap mb-1">Rs. {{number_format($currentYearSalesTotal)}}</h5>
-              <small class="text-success fw-medium"><i class="bx bx-up-arrow-alt"></i>{{$yearsales}}%</small>
+              {{-- <h5 class="card-title text-nowrap mb-1">Rs. {{number_format($currentYearSalesTotal)}}</h5> --}}
+              {{-- <small class="text-success fw-medium"><i class="bx bx-up-arrow-alt"></i>{{$yearsales}}%</small> --}}
             </div>
           </div>
         </div>
@@ -130,7 +130,7 @@
           <div class="col-md-8">
             <h5 class="card-header m-0 me-2 pb-3">Total Revenue</h5>
             <div id="totalRevenueChart" class="px-2"></div>
-            <div id="currentmonthLable" class="px-2 hideen" style="display:none">{{$data}}</div>
+            {{-- <div id="currentmonthLable" class="px-2 hideen" style="display:none">{{$data}}</div>
             <div id="currentmonth" class="px-2 hideen" style="display:none">{{$labels}}</div>
             <div id="previousYearMonthsName" class="px-2 hideen" style="display:none">{{$previousYearMonthsName}}</div>
             <div id="previousYearMonthslabels" class="px-2 hideen" style="display:none">{{$previousYearMonthslabels}}</div>
@@ -138,7 +138,7 @@
             <div id="previousYear" class="px-2 hideen" style="display:none">{{$previousYear}}</div>
             <div id="monthNames" class="px-2 hideen" style="display:none">{{$monthNames}}</div>
             <div id="counts" class="hideen" style="display:none">{{$counts}}</div>
-            <div id="previousyearCounts" class="hideen" style="display:none">{{$previousyearCounts}}</div>
+            <div id="previousyearCounts" class="hideen" style="display:none">{{$previousyearCounts}}</div> --}}
           </div>
           <div class="col-md-4">
             <div class="card-body">
@@ -163,8 +163,8 @@
               </div>
             </div>
             <div id="growthChart"></div>
-            <div class="text-center fw-semibold pt-3 mb-2"> {{$yearsales}} % Company Growth</div>
-            <div id="growthChart1" class="px-2 hideen" style="display:none">{{$yearsales}}</div>
+            {{-- <div class="text-center fw-semibold pt-3 mb-2"> {{$yearsales}} % Company Growth</div> --}}
+            {{-- <div id="growthChart1" class="px-2 hideen" style="display:none">{{$yearsales}}</div> --}}
             <div class="d-flex px-xxl-4 px-lg-2 p-4 gap-xxl-3 gap-lg-1 gap-3 justify-content-between">
               <div class="d-flex">
                 <div class="me-2">
@@ -220,8 +220,8 @@
               <span class="d-block mb-1">Payments</span>
               {{-- <h3 class="card-title text-nowrap mb-2">$2,456</h3>
               <small class="text-danger fw-medium"><i class="bx bx-down-arrow-alt"></i> -14.82%</small> --}}
-              <h5 class="card-title text-nowrap mb-1">Rs. {{number_format($currentYearSales)}}</h5>
-              <small class="text-success fw-medium"><i class="bx bx-up-arrow-alt"></i>{{$yearsales}}%</small>
+              {{-- <h5 class="card-title text-nowrap mb-1">Rs. {{number_format($currentYearSales)}}</h5> --}}
+              {{-- <small class="text-success fw-medium"><i class="bx bx-up-arrow-alt"></i>{{$yearsales}}%</small> --}}
             </div>
           </div>
         </div>
@@ -250,8 +250,8 @@
                 </div>
               </div>
               <span class="fw-medium d-block mb-1">Transactions</span>
-                <h5 class="card-title text-nowrap mb-1">Rs. {{number_format($currentYearSalesTotal)}}</h5>
-                <small class="text-success fw-medium"><i class="bx bx-up-arrow-alt"></i>{{$yearsales}}%</small>
+                {{-- <h5 class="card-title text-nowrap mb-1">Rs. {{number_format($currentYearSalesTotal)}}</h5> --}}
+                {{-- <small class="text-success fw-medium"><i class="bx bx-up-arrow-alt"></i>{{$yearsales}}%</small> --}}
             </div>
           </div>
         </div>
@@ -264,16 +264,16 @@
                 <div class="d-flex flex-sm-column flex-row align-items-start justify-content-between">
                   <div class="card-title">
                     <h5 class="text-nowrap mb-2">Profile Report</h5>
-                    <span class="badge bg-label-warning rounded-pill">Year {{$currentYear}}</span>
+                    {{-- <span class="badge bg-label-warning rounded-pill">Year {{$currentYear}}</span> --}}
                   </div>
                   <div class="mt-sm-auto">
                     <small class="text-success text-nowrap fw-medium"
-                      ><i class="bx bx-chevron-up"></i> {{number_format($profitPercentage, 2) }}%</small
+                      {{-- ><i class="bx bx-chevron-up"></i> {{number_format($profitPercentage, 2) }}%</small --}}
                     >
-                    <h5 class="mb-0">Rs. {{number_format($totalprofits)}}</h5>
+                    {{-- <h5 class="mb-0">Rs. {{number_format($totalprofits)}}</h5> --}}
                   </div>
                 </div>
-                <div id="profileReportChart" class="hideen">{{$data}}</div>
+                {{-- <div id="profileReportChart" class="hideen">{{$data}}</div> --}}
               </div>
             </div>
           </div>
@@ -308,7 +308,7 @@
               <span class="d-block mb-1">Total License</span>
               {{-- <h3 class="card-title text-nowrap mb-2">$2,456</h3>
               <small class="text-danger fw-medium"><i class="bx bx-down-arrow-alt"></i> -14.82%</small> --}}
-              <h5 class="card-title text-nowrap mb-1">{{number_format($customerCount)}}</h5>
+              {{-- <h5 class="card-title text-nowrap mb-1">{{number_format($customerCount)}}</h5> --}}
             </div>
           </div>
         </div>
@@ -339,7 +339,7 @@
               <span class="d-block mb-1">Total Renewal License</span>
               {{-- <h3 class="card-title text-nowrap mb-2">$2,456</h3>
               <small class="text-danger fw-medium"><i class="bx bx-down-arrow-alt"></i> -14.82%</small> --}}
-              <h5 class="card-title text-nowrap mb-1">{{$lastTwoMonthDatas}}</h5>
+              {{-- <h5 class="card-title text-nowrap mb-1">{{$lastTwoMonthDatas}}</h5> --}}
             </div>
           </div>
         </div>
@@ -352,11 +352,11 @@
                 <div class="d-flex flex-sm-column flex-row align-items-start justify-content-between">
                   <div class="card-title">
                     <h5 class="text-nowrap mb-2">License</h5>
-                    <span class="badge bg-label-warning rounded-pill">Year {{$currentYear}}</span>
+                    {{-- <span class="badge bg-label-warning rounded-pill">Year {{$currentYear}}</span> --}}
                   </div>
                   <div class="mt-sm-auto">
                       {{-- {{ array_sum(json_decode($counts))}} --}}
-                    <h5 class="mb-0">{{ array_sum(json_decode($counts))}}</h5>
+                    {{-- <h5 class="mb-0">{{ array_sum(json_decode($counts))}}</h5> --}}
                   </div>
                 </div>
                 <div id="licenseReportChart" class=""></div>
@@ -514,8 +514,8 @@
                   </div>
                 </div>
               </div>
-              <div id="income" class="hideen">{{$data}}</div>
-                <div id="incomeChart" class="hideen">{{ $labels }}</div>
+              {{-- <div id="income" class="hideen">{{$data}}</div> --}}
+                {{-- <div id="incomeChart" class="hideen">{{ $labels }}</div> --}}
               <div id="incomeChart"></div>
               <div class="d-flex justify-content-center pt-4 gap-2">
                 <div class="flex-shrink-0">

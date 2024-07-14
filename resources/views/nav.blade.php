@@ -31,7 +31,7 @@ id="layout-navbar">
         data-size="large"
         data-show-count="true"
         aria-label="Star themeselection/sneat-html-admin-template-free on GitHub"
-        >{{ auth()->user()->name }}</a
+        >Name</a
       >
       
     </li>
@@ -39,7 +39,7 @@ id="layout-navbar">
     <li class="nav-item dropdown-notifications navbar-dropdown dropdown me-3 me-xl-1">
       <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">
         <i class="bx bx-bell bx-sm"></i>
-        <span class="badge bg-danger rounded-pill badge-notifications">{{ auth()->user()->unreadNotifications->count() }}</span>
+        {{-- <span class="badge bg-danger rounded-pill badge-notifications">{{ auth()->user()->unreadNotifications->count() }}</span> --}}
       </a>
       <ul class="dropdown-menu dropdown-menu-end py-0">
         <li class="dropdown-menu-header border-bottom">
@@ -68,7 +68,7 @@ id="layout-navbar">
                 </div>
               </div>
             </li> --}}
-            @foreach (auth()->user()->unreadNotifications as $notification)
+            {{-- @foreach (auth()->user()->unreadNotifications as $notification) --}}
             <li class="list-group-item list-group-item-action dropdown-notifications-item">
               <div class="d-flex">
                 <div class="flex-shrink-0 me-3">
@@ -77,7 +77,7 @@ id="layout-navbar">
                   </div>
                 </div>
                 <div class="flex-grow-1">
-                  <small class="mb-1">Dear {{  $notification->data['applicant_name'] }}, your {{ $notification->data['company_name']}} license <a href={{route('fssai.view',$notification->data['id'])}} class="alert-link">(License Number: {{  $notification->data['license_number'] }}) </a>is expiring on {{date("d-m-Y", strtotime($notification->data['license_expiry_date'])) }}.Renew now to continue using our services hassle-free. </small>
+                  {{-- <small class="mb-1">Dear {{  $notification->data['applicant_name'] }}, your {{ $notification->data['company_name']}} license <a href={{route('fssai.view',$notification->data['id'])}} class="alert-link">(License Number: {{  $notification->data['license_number'] }}) </a>is expiring on {{date("d-m-Y", strtotime($notification->data['license_expiry_date'])) }}.Renew now to continue using our services hassle-free. </small> --}}
                   {{-- <p class="mb-0">Won the monthly best seller gold badge</p> --}}
                   <small class="text-muted">1h ago</small>
                   {{-- <small class="text-muted">Dear {{  $notification->data['applicant_name'] }}, your {{  $notification->data['applicant_name'] }} license <a href="{{route('fssai.view',data['id'])}}" class="alert-link">(License Number: {{  $notification->data['applicant_name'] }}) </a> is expiring on {{date("d-m-Y", strtotime($notification->data['applicant_name'])) }}.Renew now to continue using our services hassle-free.</small> --}}
@@ -89,7 +89,7 @@ id="layout-navbar">
               </div>
             </li>
            
-            @endforeach
+            {{-- @endforeach --}}
           </ul>
         </li>
         <li class="dropdown-menu-footer border-top p-3">
@@ -102,7 +102,7 @@ id="layout-navbar">
     <li class="nav-item navbar-dropdown dropdown-user dropdown">
       <a class="nav-link dropdown-toggle hide-arrow" href="javascript:void(0);" data-bs-toggle="dropdown">
         <div class="avatar avatar-online">
-          <img src={{ asset(auth()->user()->profile_photo ) }} alt class="w-px-40 h-auto rounded-circle" />
+          {{-- <img src={{ asset(auth()->user()->profile_photo ) }} alt class="w-px-40 h-auto rounded-circle" /> --}}
         </div>
       </a>
       <ul class="dropdown-menu dropdown-menu-end">
@@ -111,11 +111,11 @@ id="layout-navbar">
             <div class="d-flex">
               <div class="flex-shrink-0 me-3">
                 <div class="avatar avatar-online">
-                  <img src={{ asset(auth()->user()->profile_photo ) }} alt class="w-px-40 h-auto rounded-circle" />
+                  {{-- <img src={{ asset(auth()->user()->profile_photo ) }} alt class="w-px-40 h-auto rounded-circle" /> --}}
                 </div>
               </div>
               <div class="flex-grow-1">
-                <span class="fw-medium d-block">{{ auth()->user()->name }}</span>
+                {{-- <span class="fw-medium d-block">{{ auth()->user()->name }}</span> --}}
                 <small class="text-muted">Super Admin</small>
               </div>
             </div>
@@ -125,10 +125,10 @@ id="layout-navbar">
           <div class="dropdown-divider"></div>
         </li>
         <li>
-          <a class="dropdown-item" href="{{ route('profile',auth()->user()->id) }}">
+          {{-- <a class="dropdown-item" href="{{ route('profile',auth()->user()->id) }}"> --}}
             <i class="bx bx-user me-2"></i>
             <span class="align-middle">My Profile</span>
-          </a>
+          {{-- </a> --}}
         </li>
         <li>
           <a class="dropdown-item" href="#">
