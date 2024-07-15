@@ -15,7 +15,7 @@ class LicenseDataController extends Controller
     public function index()
     {
         $licenses = LicenseData::all();
-        return view('licenses.index', compact('licenses'));
+        return view('licenses.index', compact('licenses'))->with('i');
     }
 
 
@@ -52,7 +52,7 @@ class LicenseDataController extends Controller
             'license_status' => 'required|string|max:255',
         ]);
 
-        License::create($request->all());
+        LicenseData::create($request->all());
 
         return redirect()->route('licenses.index')
             ->with('success', 'License created successfully.');
@@ -62,7 +62,7 @@ class LicenseDataController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(License $license)
+    public function show(LicenseData $license)
     {
         return view('licenses.show', compact('license'));
     }
@@ -71,17 +71,17 @@ class LicenseDataController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(License $license)
+    public function edit(LicenseData $license)
     {
         $licenseTypes = LicenseType::all();
         $licenseCategories = LicenseCategory::all();
-        return view('licenses.edit', compact('license', 'licenseTypes', 'licenseCategories'));
+        return view('licenses.create', compact('license', 'licenseTypes', 'licenseCategories'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, License $license)
+    public function update(Request $request, LicenseData $license)
     {
         $request->validate([
             'license_type_id' => 'required|exists:license_types,id',
@@ -110,7 +110,7 @@ class LicenseDataController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(License $license)
+    public function destroy(LicenseData $license)
     {
         $license->delete();
 
