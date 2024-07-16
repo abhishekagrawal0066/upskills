@@ -111,11 +111,13 @@ id="layout-navbar">
             <div class="d-flex">
               <div class="flex-shrink-0 me-3">
                 <div class="avatar avatar-online">
-                  {{-- <img src={{ asset(auth()->user()->profile_photo ) }} alt class="w-px-40 h-auto rounded-circle" /> --}}
+                  <img src="" alt class="w-px-40 h-auto rounded-circle" />
+                  {{-- {{ asset(auth()->user()->profile_photo ) }} --}}
                 </div>
               </div>
               <div class="flex-grow-1">
-                {{-- <span class="fw-medium d-block">{{ auth()->user()->name }}</span> --}}
+                <span class="fw-medium d-block">Admin</span>
+                {{-- {{ auth()->user()->name }} --}}
                 <small class="text-muted">Super Admin</small>
               </div>
             </div>
@@ -125,10 +127,11 @@ id="layout-navbar">
           <div class="dropdown-divider"></div>
         </li>
         <li>
-          {{-- <a class="dropdown-item" href="{{ route('profile',auth()->user()->id) }}"> --}}
+          <a class="dropdown-item" href="">
+            {{-- {{ route('profile',auth()->user()->id) }} --}}
             <i class="bx bx-user me-2"></i>
             <span class="align-middle">My Profile</span>
-          {{-- </a> --}}
+          </a>
         </li>
         <li>
           <a class="dropdown-item" href="#">

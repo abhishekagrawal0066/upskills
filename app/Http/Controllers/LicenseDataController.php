@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\LicenseData;
 use App\Models\LicenseType;
 use App\Models\LicenseCategory;
-
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class LicenseDataController extends Controller
@@ -51,7 +51,6 @@ class LicenseDataController extends Controller
             'other_message' => 'nullable|string',
             'license_status' => 'required|string|max:255',
         ]);
-
         LicenseData::create($request->all());
 
         return redirect()->route('licenses.index')
@@ -116,5 +115,13 @@ class LicenseDataController extends Controller
 
         return redirect()->route('licenses.index')
             ->with('success', 'License deleted successfully.');
+    }
+    public function listExpiring()
+    {
+        // Get licenses expiring within 30 days (adjust as needed)
+        $licenses = LicenseData::whereDate('license_expiry_date', '>=', Carbon::now())
+            ->whereDate('license_expiry_date', '<=', Carbon::now()->addDays(30))
+            ->get();
+        return view('licenses.expiring')->with('licenses', $licenses)->with('i');
     }
 }

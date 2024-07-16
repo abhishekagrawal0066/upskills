@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('license_type_id')->constrained()->onDelete('cascade');
             $table->foreignId('license_category_id')->constrained()->onDelete('cascade');
-            $table->year('license_renewal_year')->nullable();
+            $table->string('license_renewal_year')->nullable();
             $table->string('company_name')->nullable();
             $table->string('applicant_name');
             $table->string('email');

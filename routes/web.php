@@ -58,6 +58,8 @@ Route::resource('license_types', LicenseTypeController::class);
 Route::get('/licenses', [LicenseDataController::class, 'index'])->name('licenses.index');
 Route::get('/licenses/create', [LicenseDataController::class, 'create'])->name('licenses.create');
 Route::post('/licenses', [LicenseDataController::class, 'store'])->name('licenses.store');
+Route::get('/licenses/expiring', [LicenseDataController::class, 'listExpiring'])->name('licenses.expiring');
+
 Route::get('/licenses/{license}', [LicenseDataController::class, 'show'])->name('licenses.show');
 Route::get('/licenses/{license}/edit', [LicenseDataController::class, 'edit'])->name('licenses.edit');
 Route::put('/licenses/{license}', [LicenseDataController::class, 'update'])->name('licenses.update');
