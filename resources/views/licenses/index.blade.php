@@ -18,9 +18,10 @@
     <!-- Basic Bootstrap Table -->
     <div class="card" style="padding:5px">
         <div>
-            <a class="btn btn-primary float-end" href={{ route('licenses.create')}} role="button">Add</a>
+          <a class="btn btn-primary float-end m-2" href={{ route('licenses.create')}} role="button">Add</a> 
+          <a class="btn btn-primary float-end m-2" href={{ route('xml.index')}} role="button">XML Upload File</a>
         </div>
-
+        
       <div class="table-responsive text-nowrap" style="padding:5px">
         <table id="fssai" class="table table-striped" style="width:100%; border-collapse: collapse;">
             <thead>

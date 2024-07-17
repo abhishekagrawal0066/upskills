@@ -124,4 +124,35 @@ class LicenseDataController extends Controller
             ->get();
         return view('licenses.expiring')->with('licenses', $licenses)->with('i');
     }
+    public function upload()
+    {
+        return view('xml.index');
+    }
+    public function uploadXML(Request $request)
+    {
+        // Validate the uploaded file
+        $request->validate([
+            'xml_file' => 'required|file|mimes:xml',
+        ]);
+
+        // Retrieve the uploaded file
+        $file = $request->file('xml_file');
+        $xmlContent = file_get_contents($file);
+
+        // Parse the XML content
+        $xml = simplexml_load_string($xmlContent);
+        $json = json_encode($xml);
+        $data = json_decode($json, true);
+        // Process the data and update the database
+        foreach ($data['your_data_key'] as $item) {
+            // Assuming 'your_data_key' is the key where your data resides in the XML
+            // Update your database with the parsed data
+            YourModel::updateOrCreate(
+                ['identifier' => $item['identifier']], // Replace with your unique identifier field
+                ['field1' => $item['field1'], 'field2' => $item['field2']] // Replace with your actual fields
+            );
+        }
+
+        return back()->with('success', 'XML file uploaded and data updated successfully.');
+    }
 }
